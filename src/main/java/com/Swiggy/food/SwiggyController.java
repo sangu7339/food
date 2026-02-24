@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/food")
+// @RequestMapping("/food")
 public class SwiggyController {
 	
     @Autowired
@@ -15,11 +15,18 @@ public class SwiggyController {
     public ResponseEntity<Object> savefood(@RequestBody Food food){
         return service.savefood(food);
     }
+	@
 
-    @GetMapping
-    public ResponseEntity<Object> getAllFoods() {
-        return service.getAllFoods();
-    }
+	@GetMapping("/")
+	public String sujanGit(){
+		return "SUJAN";
+	}
+	
+	
+    // @GetMapping
+    // public ResponseEntity<Object> getAllFoods() {
+    //     return service.getAllFoods();
+    // }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getFoodById(@PathVariable int id) {
