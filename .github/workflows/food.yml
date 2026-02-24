@@ -53,4 +53,4 @@ jobs:
           docker pull ${{ env.IMAGE_NAME }}
           docker stop food-app || true
           docker rm food-app || true
-          docker run -d -p 8020:8020 --name food-app ${{ env.IMAGE_NAME }}
+          docker run -d --network host --name food-app ${{ env.IMAGE_NAME }}
